@@ -1,4 +1,4 @@
-cache/*
-logs/*
+application/cache/*
+application/logs/*
 .DS_Store
 Thumbs.db

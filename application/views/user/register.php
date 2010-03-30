@@ -23,7 +23,8 @@
   <p><?php echo Form::password('password_confirm', NULL, array('id' => 'password_confirm')); ?></p>
   
   <p>
-    <?php echo Form::submit('register', 'Register an account'); ?> or <a href="/user/index">go back</a>.
+    <?php echo Form::submit('register', 'Register an account'); ?>
+    or <?php echo HTML::anchor(Route::get('user')->uri(array('action' => 'index')), 'return to the index'); ?>.
   </p>
   
   <?php echo Form::close(); ?>

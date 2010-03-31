@@ -6,8 +6,12 @@
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo URL::base(); ?>media/css/screen.css" />
   </head>
   <body>
-    <h1><?php echo $title; ?></h1>
+    
+    <div id="container">
+      <h1><?php echo $title; ?></h1>
 
-    <?php echo $content; ?>
+      <?php echo $content; ?>
+    </div>
+    
   </body>
 </html>

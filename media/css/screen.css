@@ -1,6 +1,5 @@
 body
 {
-  margin: 25px;
   color: #1e1e1e;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -14,6 +13,11 @@ a:link, a:visited
 a:hover
 {
   color: #55ae3d;
+}
+
+#container {
+  margin: 25px;
+  width: 800px;
 }
 
 ul#user_menu {
@@ -33,14 +37,13 @@ ul#user_menu li {
 ul#errors {
   margin: 0 0 10px 0;
   padding: 5px;
-  float: left;
-  list-style-type: none;
+  list-style-type: square;
   background: #ffbdbd;
   border: 1px #b73535 solid;
 }
 
 ul#errors li {
-  display: block;
+  margin-left: 20px;
 }
 
 #user_form {

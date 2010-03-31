@@ -50,11 +50,13 @@ class Controller_User extends Controller_Template
     
     if ($_POST)
     {
-      $user = Jelly::factory('user', $_POST);
-            
+      $user->set(Arr::extract($_POST, array(
+          'email', 'username', 'password', 'password_confirm'
+      )));
+      $user->add('roles', Jelly::select('role', 1));
+      
       try
       {
-        $user->add('roles', Jelly::select('role')->where('name', '=', 'login')->execute());
         $user->save();
         $this->request->redirect(Route::get('user')->uri(array('action' => 'index')));
       }

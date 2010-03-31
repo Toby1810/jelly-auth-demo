@@ -1,11 +1,10 @@
-<?php if(is_array($errors)): ?>
+<?php if($errors): ?>
 <ul id="errors">
-<?php foreach($errors as $field => $message): ?>
-  <li><strong><?php echo $field; ?></strong>: <?php echo $message; ?></li>
+<?php foreach($errors as $field => $error): ?>
+  <li><strong><?php echo $field; ?></strong>: <?php echo $error; ?></li>
 <?php endforeach; ?>
 </ul>
 <?php endif; ?>
-  
 
 <div id="user_form">
   <?php echo Form::open(); ?>

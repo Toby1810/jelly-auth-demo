@@ -75,15 +75,17 @@ Kohana::modules(array(
 ));
 
 /**
- * Set routes
+ * Set user routes
  */
-
-Route::set('user', 'user(/<action>)', array('action' => '[A-Za-z]+'))
+Route::set('user', 'user(/<action>)', array('action' => '(index|login|logout|register)'))
   ->defaults(array(
     'controller'  => 'user',
     'action'      => 'index',
   ));
-
+  
+/**
+ * Set default route
+ */
 Route::set('default', '')
 	->defaults(array(
 		'controller'  => 'user',

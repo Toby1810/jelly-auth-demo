@@ -27,6 +27,12 @@ class Controller_User extends Controller_Template
   
   public function action_login()
   {
+    // Redirect to the index page if the user is already logged in
+    if ($this->auth->logged_in())
+    {
+      $this->request->redirect(Route::get('user')->uri(array('action' => 'index')));
+    }
+    
     // Check if the form was submitted
     if ($_POST)
     {
@@ -52,8 +58,11 @@ class Controller_User extends Controller_Template
   
   public function action_logout()
   {
-    // Log the user out
-    $this->auth->logout();
+    // Log the user out if he is logged in
+    if ($this->auth->logged_in())
+    {
+      $this->auth->logout();
+    }
     
     // Redirect to the index page
     $this->request->redirect(Route::get('user')->uri(array('action' => 'index')));

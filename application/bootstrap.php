@@ -75,22 +75,14 @@ Kohana::modules(array(
 ));
 
 /**
- * Set user routes
+ * Set the routes. Each route must have a minimum of a name, a URI and a set of
+ * defaults for the URI.
  */
-Route::set('user', 'user(/<action>)', array('action' => '(index|login|logout|register)'))
-  ->defaults(array(
-    'controller'  => 'user',
-    'action'      => 'index',
-  ));
-  
-/**
- * Set default route
- */
-Route::set('default', '')
+Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
-		'controller'  => 'user',
-		'action'      => 'index',
-  ));
+		'controller' => 'welcome',
+		'action'     => 'index',
+	));
 
 /**
  * Execute the main request. A source of the URI can be passed, eg: $_SERVER['PATH_INFO'].

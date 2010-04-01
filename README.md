@@ -1,3 +1,3 @@
 # jelly-auth-demo
 
-This is a user registration demo application using [Kohana](http://kohanaphp.com/) 3 and [Jelly](http://jelly.jonathan-geiger.com/).
+**[jelly-auth-demo](http://github.com/rob/jelly-auth-demo)** is a sample user registration application using [Jelly](http://github.com/jonathangeiger/kohana-jelly) and [jelly-auth](http://github.com/raeldc/jelly-auth).

@@ -92,7 +92,7 @@ class Controller_User extends Controller_Template
        * 
        * We use Arr::extract() and specify the fields to add
        * by hand so that a malicious user can't do (for example)
-       * `$_POST['roles'][] = 1;` and make themselves an administrator.
+       * `$_POST['roles'][] = 2;` and make themselves an administrator.
        */
       $user->set(Arr::extract($_POST, array(
           'email', 'username', 'password', 'password_confirm'

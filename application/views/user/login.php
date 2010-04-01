@@ -1,3 +1,9 @@
+<?php if($error): ?>
+<ul id="errors">
+  <li>There was a problem logging you in.</li>
+</ul>
+<?php endif; ?>
+
 <div id="user_form">
   <?php echo Form::open(); ?>
   

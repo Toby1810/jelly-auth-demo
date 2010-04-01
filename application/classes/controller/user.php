@@ -33,6 +33,9 @@ class Controller_User extends Controller_Template
       $this->request->redirect(Route::get('user')->uri(array('action' => 'index')));
     }
     
+    // No login error by default
+    $error = FALSE;
+    
     // Check if the form was submitted
     if ($_POST)
     {
@@ -40,7 +43,11 @@ class Controller_User extends Controller_Template
       $remember = isset($_POST['remember']) ? TRUE : FALSE;
       
       // Try to log the user in
-      $this->auth->login($_POST['username'], $_POST['password'], $remember);
+      if (! $this->auth->login($_POST['username'], $_POST['password'], $remember))
+      {
+        // There was a problem logging in
+        $error = TRUE;
+      }
       
       // Redirect to the index page if the user was logged in successfully
       if ($this->auth->logged_in())
@@ -53,7 +60,8 @@ class Controller_User extends Controller_Template
     $this->template->title = 'Login';
     
     // Display the 'login' template
-    $this->template->content = View::factory('user/login');
+    $this->template->content = View::factory('user/login')
+      ->set('error', $error);
   }
   
   public function action_logout()

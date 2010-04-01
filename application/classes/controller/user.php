@@ -30,7 +30,7 @@ class Controller_User extends Controller_Template
     // Redirect to the index page if the user is already logged in
     if ($this->auth->logged_in())
     {
-      $this->request->redirect(Route::get('user')->uri(array('action' => 'index')));
+      $this->request->redirect(Route::get('default')->uri(array('action' => 'index')));
     }
     
     // No login error by default
@@ -52,7 +52,7 @@ class Controller_User extends Controller_Template
       // Redirect to the index page if the user was logged in successfully
       if ($this->auth->logged_in())
       {
-        $this->request->redirect(Route::get('user')->uri(array('action' => 'index')));
+        $this->request->redirect(Route::get('default')->uri(array('action' => 'index')));
       }
     }
 
@@ -73,7 +73,7 @@ class Controller_User extends Controller_Template
     }
     
     // Redirect to the index page
-    $this->request->redirect(Route::get('user')->uri(array('action' => 'index')));
+    $this->request->redirect(Route::get('default')->uri(array('action' => 'index')));
   }
 
   public function action_register()
@@ -107,7 +107,7 @@ class Controller_User extends Controller_Template
         $user->save();
         
         // Redirect to the index page
-        $this->request->redirect(Route::get('user')->uri(array('action' => 'index')));
+        $this->request->redirect(Route::get('default')->uri(array('action' => 'index')));
       }
       // There were errors saving our user model
       catch (Validate_Exception $e)

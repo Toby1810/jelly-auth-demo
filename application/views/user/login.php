@@ -20,7 +20,7 @@
 
   <p>
     <?php echo Form::submit('login', 'Login'); ?>
-    or <?php echo HTML::anchor(Route::get('user')->uri(array('action' => 'index')), 'return to the index'); ?>.
+    or <?php echo HTML::anchor(Route::get('default')->uri(array('action' => 'index')), 'return to the index'); ?>.
   </p>
   
   <?php echo Form::close(); ?>

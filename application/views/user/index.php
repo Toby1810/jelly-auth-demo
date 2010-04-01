@@ -7,10 +7,10 @@
 <ul id="user_menu">
 <?php if ($logged_in): ?>
   <li>
-    <?php echo HTML::anchor(Route::get('user')->uri(array('action' => 'logout')), 'Logout'); ?>
+    <?php echo HTML::anchor(Route::get('default')->uri(array('action' => 'logout')), 'Logout'); ?>
   </li>
 <?php else: ?>
-  <li><?php echo HTML::anchor(Route::get('user')->uri(array('action' => 'login')), 'Login'); ?></li>
-  <li><?php echo HTML::anchor(Route::get('user')->uri(array('action' => 'register')), 'Register'); ?></li>
+  <li><?php echo HTML::anchor(Route::get('default')->uri(array('action' => 'login')), 'Login'); ?></li>
+  <li><?php echo HTML::anchor(Route::get('default')->uri(array('action' => 'register')), 'Register'); ?></li>
 <?php endif; ?>
 </ul>

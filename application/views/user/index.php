@@ -1,16 +1,17 @@
-<?php if ($logged_in): ?>
-  <p>Hello, <?php echo $user->username; ?>!</p>
-<?php else: ?>
-  <p>Hello! You are not currently logged in.</p>
-<?php endif; ?>
+<h1>Home</h1>
 
-<ul id="user_menu">
-<?php if ($logged_in): ?>
-  <li>
-    <?php echo HTML::anchor(Route::get('default')->uri(array('action' => 'logout')), 'Logout'); ?>
-  </li>
+<p>
+	<strong>Actions:</strong> 
+	<?php if ($logged_in): ?>
+		<?php echo HTML::anchor(Route::get('default')->uri(array('action' => 'logout')), 'Logout'); ?>
+	<?php else: ?>
+		<?php echo HTML::anchor(Route::get('default')->uri(array('action' => 'login')), 'Login'); ?>,
+		<?php echo HTML::anchor(Route::get('default')->uri(array('action' => 'register')), 'Register'); ?>
+	<?php endif; ?>
+</p>
+
+<?php if (! $logged_in): ?>
+	<p>You are not logged in. Log in or register.</p>
 <?php else: ?>
-  <li><?php echo HTML::anchor(Route::get('default')->uri(array('action' => 'login')), 'Login'); ?></li>
-  <li><?php echo HTML::anchor(Route::get('default')->uri(array('action' => 'register')), 'Register'); ?></li>
+  <p>You are logged in as <strong><?php echo $user->username; ?></strong>.</p>
 <?php endif; ?>
-</ul>

@@ -1,17 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_User extends Controller_Template {
-
-	// Auth instance
-	public $auth;
-
-	public function before()
-	{
-		parent::before();
-
-		// Retrieve the auth instance
-		$this->auth = Auth::instance();
-	}
+class Controller_User extends Controller_Base {
 
 	public function action_index()
 	{

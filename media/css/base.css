@@ -1,0 +1,49 @@
+@import url("reset.css");
+
+body
+{
+	color: #2c2c2c;
+	font-size: 13px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a { color: #5a843e; }
+a:hover { color: #000000; }
+
+#wrapper
+{
+	width: 500px;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+
+	#wrapper h1
+	{
+		margin-bottom: 25px;
+		color: #358500;
+		font-size: 28px;
+		font-weight: normal;
+	}
+	
+	#wrapper p
+	{
+		margin-bottom: 15px;
+		list-style-type: square;
+	}
+
+	#wrapper ul.errors
+	{
+		margin-bottom: 25px;
+		padding-top: 15px;
+		padding-left: 15px;
+		color: #ffffff;
+		background: #800909;
+		border: 3px #b90000 solid;
+		list-style-type: square;
+	}
+	
+		#wrapper ul.errors li
+		{
+			margin-left: 15px;
+			margin-bottom: 15px;
+		}

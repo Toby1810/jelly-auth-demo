@@ -50,8 +50,8 @@ ini_set('unserialize_callback_func', 'spl_autoload_call');
  * - boolean  caching     enable or disable internal caching                 FALSE
  */
 Kohana::init(array(
-  'base_url' => '/',
-  'index_file' => ''
+	'base_url'    => '/',
+	'index_file'  => FALSE,
 ));
 
 /**
@@ -68,10 +68,10 @@ Kohana::$config->attach(new Kohana_Config_File);
  * Enable modules. Modules are referenced by a relative or absolute path.
  */
 Kohana::modules(array(
-  'database'      => MODPATH.'database',    // Database access
-  'jelly'         => MODPATH.'jelly',       // Jelly ORM
-  'jelly-auth'    => MODPATH.'jelly-auth',  // Jelly authentication
-  'auth'          => MODPATH.'auth',        // Basic authentication
+	'database'    => MODPATH.'database',    // Database access
+	'jelly'       => MODPATH.'jelly',       // Jelly ORM
+	'jelly-auth'  => MODPATH.'jelly-auth',  // Jelly authentication
+	'auth'        => MODPATH.'auth',        // Basic authentication
 ));
 
 /**
@@ -80,8 +80,8 @@ Kohana::modules(array(
  */
 Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults(array(
-		'controller' => 'user',
-		'action'     => 'index',
+		'controller'  => 'user',
+		'action'      => 'index',
 	));
 
 /**

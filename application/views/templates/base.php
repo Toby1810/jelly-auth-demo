@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title><?php echo $title; ?></title>
-		<?php echo HTML::style('media/css/base.css', array('media' => 'screen')); ?>
+		<?php echo HTML::style('media/stylesheets/base.css', array('media' => 'screen')); ?>
 	</head>
 	<body>
 		<div id="wrapper">
-			<?php echo isset($content) ? $content : ''; ?>
-		</div> <!-- #wrapper -->
+			<?php echo $content; ?>
+		</div>
 	</body>
 </html>

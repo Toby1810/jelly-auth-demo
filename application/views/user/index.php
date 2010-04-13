@@ -10,7 +10,7 @@
 </p>
 
 <?php if (! $logged_in): ?>
-	<p>You are not logged in. Log in or register.</p>
+	<p>You are not logged in.</p>
 <?php else: ?>
   <p>You are logged in as <strong><?php echo $user->username; ?></strong>.</p>
 <?php endif; ?>

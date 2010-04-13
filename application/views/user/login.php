@@ -2,7 +2,7 @@
 
 <?php if($error): ?>
 	<ul class="errors">
-  	<li>There was a problem logging you in.</li>
+  	<li>Your username or password is incorrect.</li>
 	</ul>
 <?php endif; ?>
 

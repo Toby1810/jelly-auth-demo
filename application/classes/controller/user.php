@@ -5,7 +5,7 @@ class Controller_User extends Controller_Base {
 	public function action_index()
 	{
 		// Set template title
-		$this->template->title = 'Index';
+		$this->template->title = 'Home';
 
 		// Display the 'index' template
 		$this->template->content = View::factory('user/index')

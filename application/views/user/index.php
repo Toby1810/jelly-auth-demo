@@ -1,7 +1,6 @@
 <h1>Home</h1>
 
 <p>
-	<strong>Actions:</strong> 
 	<?php if ($logged_in): ?>
 		<?php echo HTML::anchor(Route::get('default')->uri(array('action' => 'logout')), 'Logout'); ?>
 	<?php else: ?>

@@ -114,5 +114,48 @@ class Controller_User extends Controller_Base {
 			->set('user', $user)
 			->set('errors', $errors);
 	}
+	
+	public function action_change_password()
+	{		
+		// Redirect to the index page if the user is not logged in
+		if (! $this->auth->logged_in())
+		{
+			$this->request->redirect(Route::get('default')->uri(array('action' => 'index')));
+		}
+		
+		// There are no errors by default
+		$errors = FALSE;
+		
+		// Check if the form was submitted
+		if ($_POST)
+		{
+			// Retrieve current user
+			$user = $this->auth->get_user();
+			
+			// Load the $_POST values into our model.
+			$user->set(Arr::extract($_POST, array(
+				'password', 'password_confirm'
+			)));
+			
+			try
+			{
+				// Try to save our user model
+				$user->save();
+
+				// Redirect to the index page
+				$this->request->redirect(Route::get('default')->uri(array('action' => 'index')));
+			}
+			// There were errors saving our user model
+			catch (Validate_Exception $e)
+			{
+				// Load custom error messages from `messages/forms/user/register.php`
+				$errors = $e->array->errors('forms/user/register');
+			}
+		}
+		
+		// Display the 'change_password' template
+		$this->template->content = View::factory('user/change_password')
+			->set('errors', $errors);
+	}
 
 } // End Controller_User

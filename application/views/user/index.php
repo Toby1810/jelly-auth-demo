@@ -2,6 +2,7 @@
 
 <p>
 	<?php if ($logged_in): ?>
+		<?php echo HTML::anchor(Route::get('default')->uri(array('action' => 'change_password')), 'Change password'); ?>,
 		<?php echo HTML::anchor(Route::get('default')->uri(array('action' => 'logout')), 'Logout'); ?>
 	<?php else: ?>
 		<?php echo HTML::anchor(Route::get('default')->uri(array('action' => 'login')), 'Login'); ?>,

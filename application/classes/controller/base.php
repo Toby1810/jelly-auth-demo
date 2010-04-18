@@ -18,7 +18,8 @@ abstract class Controller_Base extends Controller_Template {
 		if ($this->auto_render === TRUE)
 		{
 			// Default template title
-			$this->template->title = 'Demo Application';
+			$this->template->title    = '';
+			$this->template->content  = '';
 		}
 	}
 	
